@@ -1,0 +1,82 @@
+@startuml
+class ContentView {
+  webSocketTool: WebSocketTools
+  wxTools: WXTools
+
+  handleReceivedMessage()
+  handleOtherCommand()
+  openWeChat()
+  doSomething()
+  connectOne()
+  disconnect()
+}
+
+class WebSocketTools {
+  socket: WebSocket
+  isConnected = false
+  {field} commandProcessingCallback: (JSON) -> ()
+
+  connet2Server()
+  send(message: JSON)
+  sendHeartBeat2Server()
+  didReceive(event)
+  handle(receivedData)
+  handleError()
+}
+
+class WXTools {
+  websocketTool: WebSocketTools
+  
+  openWechat()
+  sendWechatData()
+  showAlert()
+  sendInitMessage2Server()
+  send2ServerWith(weChatMessage)
+  sendWeChatInitMessage2Server()
+  sendWeChatCloseMessage2Server()
+  
+  onWxLoaderAccept()
+  onWxLoaderRecv()
+  onWxLoaderClose()
+  
+  -insertToJson()
+}
+
+class OSSTools {
+  -client
+  +sharedTool
+  
+  +getAliOSSUrlFromlocalPath()
+}
+
+class NetWorkTools {
+  +fetchAccessToken()
+  +fetchWebSocketServerList()
+}
+
+class DeviceInfo {
+  +getWiFiAddress()
+  +getDeviceUUID()
+}
+
+class HTTPRequestManager {
+  +request()
+}
+
+enum API {
+  login
+  fetchWebSocketServerList
+}
+
+Interface TargetType
+
+ContentView ..> WebSocketTools
+ContentView ..> WXTools
+ContentView ..> NetWorkTools
+NetWorkTools ..> API
+NetWorkTools ..> DeviceInfo
+NetWorkTools ..> HTTPRequestManager
+API --|> TargetType
+WXTools ..> WebSocketTools
+WXTools ..> OSSTools
+@enduml
