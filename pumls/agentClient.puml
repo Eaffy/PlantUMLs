@@ -80,10 +80,12 @@ ContentView ..> Processor
 Processor ..> WebSocketTools
 Processor ..> WXTools
 Processor ..> NetWorkTools
+
+Processor --|> WXToolsDelegate
+Processor --|> WebSocketToolsDelegate
 NetWorkTools ..> API
 NetWorkTools ..> DeviceInfo
 NetWorkTools ..> HTTPRequestManager
 API --|> TargetType
-WXTools ..> WebSocketTools
 WXTools ..> OSSTools
 @enduml
