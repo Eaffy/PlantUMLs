@@ -1,2 +1,2 @@
 # plantUMLs
-All My UMLs in PlantUML Syntax
+All my UMLs drawn in PlantUML syntax
