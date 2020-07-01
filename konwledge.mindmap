@@ -1,6 +1,83 @@
 @startmindmap
 * 知识体系
 ** iOS
+*** 基础
+**** 开发阶段
+***** 启动流程
+***** 界面布局
+***** 架构设计
+**** 调试测试阶段
+***** 提速调试
+***** 静态分析
+**** 发布阶段
+***** 自动埋点
+***** 体积优化
+**** 上线阶段
+***** 崩溃监控
+***** 卡顿监控
+***** 日志收集
+***** 性能监控
+***** 多线程问题
+***** 电量问题
+*** 应用开发
+**** GUI 框架
+***** UIKit
+***** SwiftUI
+***** Core Animation
+***** Core Graphics
+***** Core Image
+*****  OpenGL ES
+**** 响应式框架
+***** ReactCocoa
+***** RxSwift
+***** EasyReact
+**** 动画
+***** Pop
+***** RZTransitions
+**** A/B 方案
+**** 消息总线
+***** PromiseKit
+***** SwiftTask
+**** JSON 处理
+***** JSONModel
+***** Mantle
+***** JSONDecoder
+**** 布局框架
+***** Masonry
+***** SnapKit
+***** Cartography
+***** Yoga
+**** 富文本
+***** YYText
+***** DTCoreText
+**** TDD/BDD
+**** 编码规范
+*** 原理
+**** 系统内核 XNU
+**** AOP
+***** Runtime Method Swizzling
+***** libffi
+**** 内存管理
+**** 编译
+*** 原生与前端
+**** JavaScriptCore
+**** 跨端方案
+***** React Native
+***** Weex
+***** Flutter
+***** H5
+**** 布局区别
+***** 原生布局
+***** 前端布局
+**** 渲染区别
+***** 原生渲染
+***** React Native 渲染
+***** Flutter 渲染
+**** 动态化方案分析
+***** WaxPatch
+***** JSPatch
+***** OCS
+***** 低风险方案
 ** React-Native
 ** Flutter
 ** Android
