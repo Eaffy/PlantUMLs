@@ -1,8 +1,14 @@
 @startuml
 class ContentView {
+  processor: Processor
+}
+hide ContentView methods
+
+class Processor {
   webSocketTool: WebSocketTools
   wxTools: WXTools
 
+  +start()
   handleReceivedMessage()
   handleOtherCommand()
   openWeChat()
@@ -70,9 +76,10 @@ enum API {
 
 Interface TargetType
 
-ContentView ..> WebSocketTools
-ContentView ..> WXTools
-ContentView ..> NetWorkTools
+ContentView ..> Processor
+Processor ..> WebSocketTools
+Processor ..> WXTools
+Processor ..> NetWorkTools
 NetWorkTools ..> API
 NetWorkTools ..> DeviceInfo
 NetWorkTools ..> HTTPRequestManager
